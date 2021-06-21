@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">2AppStudio Test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_shuffle">Shuffle</string>
+    <string name="menu_sort">Sort</string>
+    <string name="menu_add">Add</string>
+    <string name="add_web_url">Add Web Url</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_invalid_link">Please add valid website link.</string>
+    <string name="msg_adding_links">Adding Links</string>
+    <string name="msg_done">Done.</string>
+    <string name="msg_error">Can\'t add links.</string>
+    <string name="action_delete">Delete</string>
+    <string name="msg_cannot_delete">Please select at least one item.</string>
+</resources>

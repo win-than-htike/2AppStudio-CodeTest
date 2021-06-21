@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.onething.a2appstudiotest.model.Links" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitCenter"
+            app:imageUrl="@{data.image}"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/iv_logo"
+            android:fontFamily="@font/roboto"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@{data.title}"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/tv_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/iv_logo"
+            android:fontFamily="@font/roboto"
+            android:text="@{data.link}"
+            tools:text="@tools:sample/lorem" />
+
+    </RelativeLayout>
+</layout>
