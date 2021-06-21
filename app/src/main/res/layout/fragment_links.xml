@@ -15,14 +15,46 @@
         android:layout_height="match_parent"
         tools:context=".features.links.LinksFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_links"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:clipToPadding="false"
-            android:paddingBottom="16dp"
-            app:listData="@{viewModel.list}"/>
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_links"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp"
+                app:listData="@{viewModel.list}"/>
+
+            <LinearLayout
+                android:id="@+id/ll_empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                app:visible="@{viewModel.isEmpty}">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/img_empty"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/black"
+                    android:text="@string/empty_text"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

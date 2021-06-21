@@ -2,6 +2,7 @@ package com.onething.a2appstudiotest.features.links
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -109,6 +110,8 @@ class LinksFragment : Fragment() {
     }
 
     private fun showAddLinksDialog() {
+        val adapter = binding.rvLinks.adapter as LinksListAdapter
+        adapter.resetSelectState()
         val dialog = AddLinksDialog()
         dialog.setOnClickAddLink {
             viewModel.processLinks(it)

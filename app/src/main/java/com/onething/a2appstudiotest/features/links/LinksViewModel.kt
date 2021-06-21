@@ -25,9 +25,16 @@ class LinksViewModel @Inject constructor(
     val status: LiveData<LinksStatus>
         get() = _status
 
+    private val _isEmpty = MutableLiveData<Boolean?>()
+    val isEmpty : LiveData<Boolean?>
+        get() = _isEmpty
     private val _list = MutableLiveData<List<Links>>()
     val list : LiveData<List<Links>>
         get() = _list
+
+    init {
+        _isEmpty.postValue(_list.value?.isEmpty())
+    }
 
     fun processLinks(url: String) {
         viewModelScope.launch {
@@ -50,8 +57,9 @@ class LinksViewModel @Inject constructor(
         }
     }
 
-    private fun resetList(list: List<Links>) {
-        _list.postValue(list)
+    private fun resetList(data: List<Links>) {
+        _list.postValue(data)
+        _isEmpty.postValue(data.isEmpty())
     }
 
     fun shuffle() {

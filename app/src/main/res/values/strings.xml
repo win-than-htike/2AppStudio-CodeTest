@@ -13,4 +13,5 @@
     <string name="msg_error">Can\'t add links.</string>
     <string name="action_delete">Delete</string>
     <string name="msg_cannot_delete">Please select at least one item.</string>
+    <string name="empty_text">Please add website link.</string>
 </resources>
